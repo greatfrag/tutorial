@@ -36,6 +36,9 @@
     <ClInclude Include="CircleRadiusControls.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ControlDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tutorial.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CircleRadiusControls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

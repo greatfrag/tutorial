@@ -84,6 +84,8 @@ BEGIN_MESSAGE_MAP(CTutorialDlg, CDialogEx)
 	ON_WM_RBUTTONDOWN()
 	ON_WM_MOUSEMOVE()
 	ON_BN_CLICKED(IDC_TIMER_CONTROL_SLIDERS, &CTutorialDlg::OnBnClickedTimerControlSliders)
+	ON_BN_CLICKED(IDC_CONTROL, &CTutorialDlg::OnBnClickedControl)
+	ON_BN_CLICKED(IDCANCEL, &CTutorialDlg::OnBnClickedCancel)
 END_MESSAGE_MAP()
 
 
@@ -132,6 +134,8 @@ BOOL CTutorialDlg::OnInitDialog()
 
 	m_Seconds = 0;
 	SetTimer(0, 1000, NULL);
+
+	m_control.Create(IDD_CONTROLS_CHILDDLG, this);
 
 	UpdateData(FALSE);
 
@@ -293,4 +297,25 @@ void CTutorialDlg::OnBnClickedTimerControlSliders()
 {
 	// TODO: Add your control notification handler code here
 	UpdateData(TRUE);
+}
+
+
+void CTutorialDlg::OnBnClickedControl()
+{
+	// TODO: Add your control notification handler code here
+	m_control.ShowWindow(SW_NORMAL);
+	//m_control.DoModal();
+}
+
+void CTutorialDlg::OnCancel()
+{
+	// TODO: Add your control notification handler code here
+	m_control.DestroyWindow();
+
+	CDialogEx::OnCancel();
+}
+
+void CTutorialDlg::OnBnClickedCancel()
+{
+	OnCancel();
 }

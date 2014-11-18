@@ -5,6 +5,7 @@
 #pragma once
 #include "afxcmn.h"
 #include "CircleRadiusControls.h"
+#include "ControlDialog.h"
 
 // CTutorialDlg dialog
 class CTutorialDlg : public CDialogEx
@@ -30,6 +31,9 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+
+	virtual void OnCancel();
+
 private:
 	CString m_EchoText;
 	int m_OkCount;
@@ -58,6 +62,9 @@ public:
 private:
 	BOOL m_TimerCtrlSliders;
 	CCircleRadiusControls m_circle_controls;
+	CControlDialog m_control;
 public:
 	afx_msg void OnBnClickedTimerControlSliders();
+	afx_msg void OnBnClickedControl();
+	afx_msg void OnBnClickedCancel();
 };
